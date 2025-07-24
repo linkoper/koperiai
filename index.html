@@ -1,41 +1,35 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-
-<meta name="google-site-verification" content="k_rU_jvjSc_EIoNcb5hDAzZe8ZJcAIt8fYp4hUqu1IA" />
-
-
-  
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1169571001318275"
-     crossorigin="anonymous"></script> 
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>koperi</title>
     <style>
         :root {
-            --primary-color: #0052cc;
-            --secondary-color: #f5f6f5;
+            --primary-color: #1e90ff;
+            --secondary-color: #f0f2f5;
             --accent-color: #ff4d4f;
             --text-color: #1a1a1a;
-            --text-secondary: #595959;
-            --border-color: #e8ecef;
+            --text-secondary: #65676b;
+            --border-color: #dfe3ee;
             --white: #ffffff;
-            --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
-            --image-size: 80px;
-            --media-height: 400px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.2);
+            --image-size: 60px;
+            --media-height: 320px;
+            --transition: all 0.3s ease;
         }
 
         [data-theme="dark"] {
-            --primary-color: #4d8cff;
-            --secondary-color: #2d2d2d;
+            --primary-color: #61dafb;
+            --secondary-color: #1c2526;
             --accent-color: #ff6b6b;
-            --text-color: #ffffff;
-            --text-secondary: #b0b0b0;
-            --border-color: #444444;
-            --white: #1a1a1a;
-            --shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
-            --shadow-hover: 0 4px 12px rgba(255, 255, 255, 0.15);
+            --text-color: #e4e6eb;
+            --text-secondary: #b0b3b8;
+            --border-color: #3a3f47;
+            --white: #22252d;
+            --shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+            --shadow-hover: 0 6px 16px rgba(255, 255, 255, 0.15);
         }
 
         * {
@@ -52,298 +46,319 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 24px;
+            padding: 20px;
             display: grid;
             grid-template-columns: 300px 1fr;
-            gap: 32px;
+            gap: 28px;
         }
 
         header {
             background: var(--white);
             border-bottom: 1px solid var(--border-color);
-            padding: 16px 24px;
+            padding: 12px 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
             align-items: center;
-            gap: 12px;
-        }
-
-        header h1 {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-color);
+            gap: 10px;
+            box-shadow: var(--shadow);
         }
 
         header img {
-            width: 32px;
-            height: 32px;
-            object-fit: contain;
+            width: 28px;
+            height: 28px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
         }
 
         #theme-toggle {
             margin-left: auto;
-            padding: 8px 16px;
-            background: var(--primary-color);
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        #theme-toggle:hover {
-            background: #003d99;
-            transform: translateY(-2px);
-        }
-
-        #profile-section {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 80px;
-            text-align: center;
-            transition: box-shadow 0.3s ease;
-        }
-
-        #profile-section:hover {
-            box-shadow: var(--shadow-hover);
-        }
-
-        #profile-pic {
-            width: var(--image-size);
-            height: var(--image-size);
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--primary-color);
-            margin-bottom: 16px;
-            transition: transform 0.3s ease;
-        }
-
-        #profile-pic:hover {
-            transform: scale(1.05);
-        }
-
-        #profile-name {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            cursor: pointer;
-            color: var(--text-color);
-        }
-
-        #profile-bio {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-        }
-
-        #profile-stats {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 16px;
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-
-        #profile-stats div {
-            font-weight: 500;
-        }
-
-        #profile-section button {
-            width: 100%;
-            margin: 8px 0;
-        }
-
-        #hamburger-menu {
-            cursor: pointer;
-            font-size: 24px;
-            margin: 8px auto;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #dropdown-menu {
-            display: none;
-            background: var(--white);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-top: 8px;
-            box-shadow: var(--shadow);
-        }
-
-        #dropdown-menu button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            text-align: left;
-            background: none;
-            border: none;
-            color: var(--text-color);
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        #dropdown-menu button:hover {
-            background: var(--secondary-color);
-        }
-
-        #forum-section {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: var(--shadow);
-            transition: box-shadow 0.3s ease;
-            position: relative;
-        }
-
-        #forum-section:hover {
-            box-shadow: var(--shadow-hover);
-        }
-
-        #forum-section h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .search-container {
-            position: relative;
-            margin-bottom: 16px;
-        }
-
-        #search-bar {
-            width: 100%;
-            padding: 12px 12px 12px 40px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-            background: url('https://images.vexels.com/media/users/3/140723/isolated/preview/158241d2079a635fb0cae49accb56da5-icono-de-lupa.png') no-repeat 10px center;
-            background-size: 20px;
-        }
-
-        #search-bar:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 8px rgba(0, 82, 204, 0.2);
-            outline: none;
-        }
-
-        #sort-options, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 16px;
-            margin-bottom: 16px;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        #sort-options:focus, textarea:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 8px rgba(0, 82, 204, 0.2);
-            outline: none;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .file-input-wrapper {
-            position: relative;
-            margin-bottom: 16px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .file-input-label {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: var(--primary-color);
-            color: var(--white);
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
-            font-weight: bold;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .file-input-label:hover {
-            background: #003d99;
-            transform: scale(1.1);
-        }
-
-        input[type="file"] {
-            display: none;
-        }
-
-        button {
             padding: 10px 20px;
             background: var(--primary-color);
             color: var(--white);
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
-            font-weight: 500;
-            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        button:hover {
-            background: #003d99;
-            transform: translateY(-2px);
+            font-size: 14px;
+            font-weight: 600;
+            transition: var(--transition);
             box-shadow: var(--shadow);
         }
 
-        button:active {
-            transform: translateY(0);
+        #theme-toggle:hover {
+            background: #0066cc;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        #profile-section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 70px;
+            transition: var(--transition);
+            min-height: 500px;
+        }
+
+        #profile-section:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        #profile-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #profile-pic {
+            width: var(--image-size);
+            height: var(--image-size);
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+            margin-bottom: 12px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        #profile-pic:hover {
+            transform: scale(1.1);
+        }
+
+        #profile-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        #profile-bio {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            min-height: 100px;
+        }
+
+        #profile-stats {
+            display: flex;
+            justify-content: space-around;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 12px;
+        }
+
+        #menu-toggle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        #menu-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--text-color);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        #menu-options {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #menu-options button {
+            display: block;
+            width: 100%;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        #menu-options button:hover {
+            background: #0066cc;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        #home-logo {
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        #home-logo:hover {
+            transform: scale(1.1);
+        }
+
+        #forum-section, #video-section, #followers-section, #user-profile-section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        #forum-section:hover, #video-section:hover, #followers-section:hover, #user-profile-section:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        #section-toggle {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        #section-toggle button {
+            flex: 1;
+            padding: 10px 20px;
+            font-size: 14px;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        #section-toggle button.active {
+            background: var(--accent-color);
+        }
+
+        #section-toggle button:hover {
+            background: #0066cc;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        #search-bar {
+            width: 100%;
+            padding: 10px 10px 10px 36px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 14px;
+            background: url('https://images.vexels.com/media/users/3/140723/isolated/preview/158241d2079a635fb0cae49accb56da5-icono-de-lupa.png') no-repeat 10px center;
+            background-size: 20px;
+            margin-bottom: 16px;
+            transition: var(--transition);
+        }
+
+        #search-bar:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 8px rgba(0, 102, 204, 0.2);
+            outline: none;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 16px;
+            resize: vertical;
+            min-height: 90px;
+            transition: var(--transition);
+        }
+
+        textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 8px rgba(0, 102, 204, 0.2);
+            outline: none;
+        }
+
+        .file-input-wrapper {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .file-input-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .file-input-label:hover {
+            background: #0066cc;
+            transform: scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+
+        input[type="file"] {
+            display: none;
         }
 
         .post {
             background: var(--white);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 24px;
-            transition: box-shadow 0.3s ease;
+            padding: 16px;
+            margin-bottom: 20px;
+            transition: var(--transition);
         }
 
         .post:hover {
             box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
         }
 
         .post-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
+            gap: 10px;
+            margin-bottom: 12px;
         }
 
         .post-header img {
             width: var(--image-size);
             height: var(--image-size);
             border-radius: 50%;
-            object-fit: cover;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .post-header img:hover {
+            transform: scale(1.1);
         }
 
         .post-header p {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-secondary);
         }
 
@@ -354,66 +369,79 @@
         }
 
         .post-content p {
-            font-size: 16px;
-            margin-bottom: 16px;
+            font-size: 14px;
+            margin-bottom: 12px;
         }
 
         .post-content img, .post-content video {
             width: 100%;
-            height: var(--media-height);
+            max-height: var(--media-height);
             object-fit: contain;
             border-radius: 8px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
-        .post-content video {
-            max-width: 100%;
-            background: #000;
+        .video-player {
+            position: relative;
+            width: 100%;
+            max-height: 400px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .video-player video {
+            width: 100%;
+            height: auto;
+            pointer-events: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .post-actions {
             display: flex;
-            gap: 16px;
+            gap: 12px;
             align-items: center;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .post-actions button {
             display: flex;
             align-items: center;
-            gap: 8px;
-            background: none;
-            color: var(--text-color);
-            border: 1px solid var(--border-color);
-            padding: 8px 12px;
-            font-size: 14px;
+            gap: 6px;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 8px 16px;
+            font-size: 13px;
+            border-radius: 8px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            cursor: pointer;
         }
 
         .post-actions button img {
-            width: 24px;
-            height: 24px;
-            object-fit: contain;
+            width: 20px;
+            height: 20px;
         }
 
         .post-actions button:hover {
-            background: var(--secondary-color);
-            color: var(--primary-color);
-            transform: none;
+            background: #0066cc;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
         }
 
         .post-actions .like-btn.liked {
-            color: var(--accent-color);
-            border-color: var(--accent-color);
+            background: var(--accent-color);
         }
 
         .post-actions .delete-btn {
-            color: var(--accent-color);
-            border-color: var(--accent-color);
+            background: var(--accent-color);
         }
 
         .post-actions .delete-btn:hover {
-            background: var(--accent-color);
-            color: var(--white);
+            background: #cc0000;
         }
 
         .reply {
@@ -422,167 +450,220 @@
             background: var(--secondary-color);
             border-radius: 8px;
             margin-bottom: 12px;
+            transition: var(--transition);
         }
 
-        .reply .post-header {
-            margin-bottom: 8px;
-        }
-
-        .reply .post-header img {
-            width: var(--image-size);
-            height: var(--image-size);
-            border-radius: 50%;
-        }
-
-        .reply p {
-            font-size: 14px;
-        }
-
-        .reply img, .reply video {
-            width: 100%;
-            height: var(--media-height);
-            border-radius: 8px;
-            object-fit: contain;
-        }
-
-        .reply video {
-            max-width: 100%;
-            background: #000;
-        }
-
-        .error, .loading {
-            color: var(--accent-color);
-            font-size: 14px;
-            margin: 12px 0;
-        }
-
-        .loading {
-            color: var(--primary-color);
-        }
-
-        #modal, #login-modal, #profile-select-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
+        .reply:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
         }
 
         .modal-content {
             background: var(--white);
             border-radius: 12px;
-            padding: 24px;
+            padding: 20px;
             max-width: 400px;
             width: 90%;
             text-align: center;
             box-shadow: var(--shadow);
+            transform: translateY(20px);
+            animation: slideIn 0.3s ease forwards;
         }
 
-        .modal-content img {
-            width: var(--image-size);
-            height: var(--image-size);
-            border-radius: 50%;
-            margin-bottom: 16px;
+        @keyframes slideIn {
+            to {
+                transform: translateY(0);
+            }
         }
 
-        .modal-content input, .modal-content select {
+        .modal-content input, .modal-content textarea {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            font-size: 16px;
-            margin-bottom: 16px;
+            font-size: 14px;
+            margin-bottom: 12px;
+            transition: var(--transition);
         }
 
-        .modal-content button {
-            width: 100%;
-            margin: 8px 0;
+        .modal-content input:focus, .modal-content textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 8px rgba(0, 102, 204, 0.2);
+            outline: none;
         }
 
-        #notification {
+        #notification-container {
             position: fixed;
-            bottom: 24px;
-            right: 24px;
+            bottom: 20px;
+            right: 20px;
+            max-width: 300px;
+            z-index: 1000;
+        }
+
+        .notification {
             background: var(--primary-color);
             color: var(--white);
-            padding: 12px 24px;
+            padding: 12px 20px;
             border-radius: 8px;
-            display: none;
+            margin-bottom: 10px;
             box-shadow: var(--shadow);
+            animation: fadeIn 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        #post-form {
-            display: none;
-            margin-bottom: 16px;
+        .notification img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        .notification button {
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         #toggle-post-form {
             position: absolute;
-            top: 24px;
-            right: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
+            top: 20px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
             background: var(--primary-color);
             color: var(--white);
             border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            font-size: 24px;
-            font-weight: bold;
-            transition: background 0.3s ease, transform 0.3s ease;
+            font-size: 22px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
         }
 
         #toggle-post-form:hover {
-            background: #003d99;
+            background: #0066cc;
             transform: scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .follower-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .follower-item img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .follower-item p {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .follower-item button {
+            padding: 6px 12px;
+            font-size: 12px;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .follower-item button:hover {
+            background: #0066cc;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            color: white;
+            font-size: 24px;
+        }
+
+        #user-profile-section {
+            display: none;
+        }
+
+        #user-profile-content {
+            margin-top: 20px;
+        }
+
+        #back-to-home-profile, #go-back-profile {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        #back-to-home-profile:hover, #go-back-profile:hover {
+            background: #0066cc;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
         }
 
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
-                padding: 16px;
+                padding: 12px;
             }
 
             #profile-section {
                 position: static;
             }
 
-            .post {
-                max-width: 100%;
-            }
-
-            #toggle-post-form, .file-input-wrapper {
-                top: 16px;
-                right: 16px;
-            }
-
-            button, #search-bar, #sort-options, textarea, input {
-                font-size: 14px;
-            }
-
-            .file-input-wrapper {
-                flex-direction: column;
-                gap: 8px;
+            #toggle-post-form {
+                top: 12px;
+                right: 12px;
             }
         }
     </style>
 </head>
 <body>
+    <div id="loading-overlay">Cargando...</div>
     <header>
         <img src="https://images.vexels.com/media/users/3/140723/isolated/preview/158241d2079a635fb0cae49accb56da5-icono-de-lupa.png" alt="Logo">
         <h1>koperi</h1>
+        <img id="home-logo" src="https://static.vecteezy.com/system/resources/previews/010/151/174/non_2x/house-and-home-icon-symbol-sign-free-png.png" alt="Inicio" onclick="goToHome()">
         <button id="theme-toggle">Cambiar a Tema Oscuro</button>
     </header>
-    <div id="login-modal">
+    <div id="login-modal" style="display: none;">
         <div class="modal-content">
-            <h2>Iniciar Sesión o Registrarse</h2>
+            <h2>Iniciar Sesión</h2>
             <input id="login-email" type="email" placeholder="Correo electrónico">
             <input id="login-password" type="password" placeholder="Contraseña">
             <button id="login-btn">Iniciar Sesión</button>
@@ -590,63 +671,54 @@
             <p id="login-error" class="error"></p>
         </div>
     </div>
-    <div id="profile-select-modal">
-        <div class="modal-content">
-            <h2>Seleccionar Perfil</h2>
-            <select id="profile-select">
-                <option value="">Selecciona un perfil</option>
-            </select>
-            <button id="select-profile-btn">Seleccionar Perfil</button>
-            <button id="new-profile-btn">Crear Nuevo Perfil</button>
-            <p id="profile-select-error" class="error"></p>
-        </div>
-    </div>
-    <div id="modal">
+    <div id="modal" style="display: none;">
         <div class="modal-content">
             <h2>Configura tu Perfil</h2>
-            <img id="modal-profile-pic" src="https://via.placeholder.com/80" alt="Foto de Perfil">
             <input type="text" id="modal-display-name" placeholder="Ingresa tu nombre">
+            <input type="password" id="modal-password" placeholder="Nueva contraseña">
             <textarea id="modal-bio" placeholder="Escribe una breve biografía..."></textarea>
             <div class="file-input-wrapper">
                 <label for="modal-profile-pic-input" class="file-input-label">📷</label>
                 <input type="file" id="modal-profile-pic-input" accept="image/*" onchange="validateFile(this)">
             </div>
             <button id="modal-save-profile">Guardar Perfil</button>
+            <button id="modal-delete-account">Eliminar Cuenta</button>
             <p id="modal-error" class="error"></p>
         </div>
     </div>
-    <div id="notification"></div>
+    <div id="notification-container"></div>
     <div class="container">
         <div id="profile-section" style="display: none;">
-            <img id="profile-pic" src="https://via.placeholder.com/80" alt="Foto de Perfil">
-            <div id="profile-name"></div>
-            <div id="profile-bio"></div>
-            <div id="profile-stats">
-                <div id="follower-count">Seguidores: 0</div>
-                <div id="post-count">Publicaciones: 0</div>
+            <div id="profile-header">
+                <img id="profile-pic" src="https://via.placeholder.com/60" alt="Foto de Perfil" onclick="viewUserProfile(clientId)">
+                <div id="profile-name"></div>
+                <div id="profile-bio"></div>
+                <div id="profile-stats">
+                    <div id="follower-count">Seguidores: 0</div>
+                    <div id="post-count">Publicaciones: 0</div>
+                </div>
+                <div id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="menu-options">
+                    <button id="edit-profile">Editar Perfil</button>
+                    <button id="view-followers">Ver Seguidores</button>
+                    <button id="messages-btn">Mensajes</button>
+                    <button id="logout-btn">Cerrar Sesión</button>
+                </div>
             </div>
-            <button id="edit-profile">Editar Perfil</button>
-            <div id="hamburger-menu">☰</div>
-            <div id="dropdown-menu">
-                <button id="view-my-posts">Ver Mis Publicaciones</button>
-                <button id="view-followers">Ver Seguidores</button>
-                <button id="view-following">Ver Seguidos</button>
-                <button id="go-back">Volver</button>
-                <button id="go-back-alt">Regresar</button>
-            </div>
-            <button id="logout-btn">Cerrar Sesión</button>
         </div>
         <div id="forum-section">
-            <div class="search-container">
-                <input type="text" id="search-bar" placeholder="Buscar publicaciones...">
+            <div id="section-toggle">
+                <button id="show-posts" class="active">Publicaciones</button>
+                <button id="show-videos">Videos</button>
+                <button id="show-followers">Seguidores</button>
             </div>
-            <select id="sort-options">
-                <option value="timestamp-desc">Más Reciente</option>
-                <option value="timestamp-asc">Más Antiguo</option>
-                <option value="likes-desc">Más Likes</option>
-            </select>
+            <input type="text" id="search-bar" placeholder="Buscar publicaciones, videos o usuarios...">
             <div id="toggle-post-form">+</div>
-            <div id="post-form">
+            <div id="post-form" style="display: none;">
                 <textarea id="post-content" placeholder="Escribe tu mensaje..."></textarea>
                 <div class="file-input-wrapper">
                     <label for="post-image" class="file-input-label">📷</label>
@@ -656,18 +728,36 @@
                 </div>
                 <button id="submit-post">Publicar</button>
                 <p id="error" class="error"></p>
-                <p id="loading" class="loading"></p>
             </div>
             <h3>Publicaciones</h3>
             <div id="posts"></div>
+        </div>
+        <div id="video-section" style="display: none;">
+            <h3>Videos</h3>
+            <div class="video-player">
+                <video id="main-video" controls>
+                    <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                    Tu navegador no soporta video.
+                </video>
+            </div>
+            <div id="videos"></div>
+        </div>
+        <div id="followers-section" style="display: none;">
+            <h3>Seguidores</h3>
+            <div id="followers"></div>
+        </div>
+        <div id="user-profile-section">
+            <h3>Perfil de Usuario</h3>
+            <div id="user-profile-content"></div>
+            <button id="back-to-home-profile">Inicio</button>
+            <button id="go-back-profile">Regresar</button>
         </div>
     </div>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
-        import { getDatabase, ref, set, onValue, get, remove, push, update, query, orderByChild, limitToLast } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updatePassword, deleteUser } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+        import { getDatabase, ref, set, onValue, get, remove, push, update, onChildAdded, onChildChanged } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyAd1GyJ7xsCjw_BkuEyBbzyyzbXjPH-Pww",
@@ -683,70 +773,65 @@
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const database = getDatabase(app);
-        getAnalytics(app);
 
         let clientId = localStorage.getItem('clientId');
         let profile = null;
+        let currentSection = 'posts';
+        let isLoading = true;
 
         const loginModal = document.getElementById('login-modal');
-        const loginEmail = document.getElementById('login-email');
-        const loginPassword = document.getElementById('login-password');
-        const loginBtn = document.getElementById('login-btn');
-        const registerBtn = document.getElementById('register-btn');
-        const loginError = document.getElementById('login-error');
-        const profileSelectModal = document.getElementById('profile-select-modal');
-        const profileSelect = document.getElementById('profile-select');
-        const selectProfileBtn = document.getElementById('select-profile-btn');
-        const newProfileBtn = document.getElementById('new-profile-btn');
-        const profileSelectError = document.getElementById('profile-select-error');
         const modal = document.getElementById('modal');
         const profileSection = document.getElementById('profile-section');
-        const logoutBtn = document.getElementById('logout-btn');
-        const hamburgerMenu = document.getElementById('hamburger-menu');
-        const dropdownMenu = document.getElementById('dropdown-menu');
+        const postsDiv = document.getElementById('posts');
+        const videosDiv = document.getElementById('videos');
+        const followersDiv = document.getElementById('followers');
+        const errorDiv = document.getElementById('error');
+        const notificationContainer = document.getElementById('notification-container');
+        const forumSection = document.getElementById('forum-section');
+        const videoSection = document.getElementById('video-section');
+        const followersSection = document.getElementById('followers-section');
+        const userProfileSection = document.getElementById('user-profile-section');
+        const userProfileContent = document.getElementById('user-profile-content');
+        const loadingOverlay = document.getElementById('loading-overlay');
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuOptions = document.getElementById('menu-options');
+        const mainVideo = document.getElementById('main-video');
 
         document.addEventListener('DOMContentLoaded', () => {
-            initializeThemeToggle();
-            initializeHamburgerMenu();
-            onAuthStateChanged(auth, async (user) => {
-                if (user) {
-                    const email = user.email.replace(/\./g, '_');
-                    const profilesSnapshot = await get(ref(database, `users/${email}`));
-                    const profiles = profilesSnapshot.val() || {};
-                    const profileKeys = Object.keys(profiles);
-                    if (clientId && profiles[clientId]) {
-                        profile = profiles[clientId];
-                        localStorage.setItem('profile', JSON.stringify(profile));
-                        profileSection.style.display = 'block';
-                        loginModal.style.display = 'none';
-                        profileSelectModal.style.display = 'none';
-                        modal.style.display = 'none';
-                        initializePostsListener();
-                        initializeProfileListener();
-                        initializePostFormToggle();
-                        updateProfileUI();
-                    } else if (profileKeys.length > 0) {
-                        profileSelect.innerHTML = '<option value="">Selecciona un perfil</option>';
-                        for (const key of profileKeys) {
-                            const option = document.createElement('option');
-                            option.value = key;
-                            option.textContent = profiles[key].displayName || 'Perfil sin nombre';
-                            profileSelect.appendChild(option);
+            setTimeout(() => {
+                loadingOverlay.style.display = 'none';
+                initializeThemeToggle();
+                initializeSectionToggle();
+                onAuthStateChanged(auth, async (user) => {
+                    if (user) {
+                        const email = user.email.replace(/\./g, '_');
+                        const profileSnapshot = await get(ref(database, `users/${email}/${clientId}`));
+                        profile = profileSnapshot.val();
+                        if (clientId && profile) {
+                            localStorage.setItem('profile', JSON.stringify(profile));
+                            profileSection.style.display = 'block';
+                            loginModal.style.display = 'none';
+                            modal.style.display = 'none';
+                            initializePostsListener();
+                            initializeFollowersListener();
+                            initializeRealTimeNotifications();
+                            updateProfileUI();
+                        } else {
+                            clientId = generateUUID();
+                            localStorage.setItem('clientId', clientId);
+                            loginModal.style.display = 'none';
+                            modal.style.display = 'flex';
                         }
-                        loginModal.style.display = 'none';
-                        profileSelectModal.style.display = 'flex';
                     } else {
-                        loginModal.style.display = 'none';
-                        profileSelectModal.style.display = 'none';
-                        modal.style.display = 'flex';
+                        loginModal.style.display = 'flex';
+                        profileSection.style.display = 'none';
+                        modal.style.display = 'none';
                     }
-                } else {
-                    loginModal.style.display = 'flex';
-                    profileSection.style.display = 'none';
-                    profileSelectModal.style.display = 'none';
-                    modal.style.display = 'none';
-                }
-            });
+                });
+                menuToggle.addEventListener('click', () => {
+                    menuOptions.style.display = menuOptions.style.display === 'block' ? 'none' : 'block';
+                });
+            }, 5000);
         });
 
         function generateUUID() {
@@ -760,29 +845,23 @@
             const file = input.files[0];
             if (!file) return;
             const isVideo = input.accept.includes('video');
-            const maxSizeMB = isVideo ? 50 : 10; // 50MB for videos, 10MB for images
+            const maxSizeMB = isVideo ? 50 : 10;
             if (file.size > maxSizeMB * 1024 * 1024) {
-                document.getElementById('error').textContent = `El archivo es demasiado grande. El tamaño máximo es ${maxSizeMB}MB.`;
+                errorDiv.textContent = `El archivo es demasiado grande. Máximo ${maxSizeMB}MB.`;
                 input.value = '';
                 return;
             }
-            const validImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
-            const validVideoTypes = ['video/mp4', 'video/webm', 'video/ogg'];
-            if (input.id.includes('image') && !validImageTypes.includes(file.type)) {
-                document.getElementById('error').textContent = 'Archivo inválido. Selecciona una imagen válida (JPEG, PNG, GIF).';
+            if (input.id.includes('image') && !['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
+                errorDiv.textContent = 'Selecciona una imagen válida (JPEG, PNG, GIF).';
                 input.value = '';
-            } else if (input.id.includes('video') && !validVideoTypes.includes(file.type)) {
-                document.getElementById('error').textContent = 'Archivo inválido. Selecciona un video válido (MP4, WebM, OGG).';
+            } else if (input.id.includes('video') && !['video/mp4', 'video/webm', 'video/ogg'].includes(file.type)) {
+                errorDiv.textContent = 'Selecciona un video válido (MP4, WebM, OGG).';
                 input.value = '';
             }
         };
 
         async function compressMedia(file, isVideo = false) {
             if (!file) return null;
-            const maxSizeMB = isVideo ? 50 : 10; // 50MB for videos, 10MB for images
-            if (file.size > maxSizeMB * 1024 * 1024) {
-                throw new Error(`El archivo es demasiado grande. El tamaño máximo es ${maxSizeMB}MB.`);
-            }
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
                 reader.onerror = () => reject(new Error('Error al leer el archivo.'));
@@ -794,11 +873,10 @@
                         img.onload = () => {
                             const canvas = document.createElement('canvas');
                             const ctx = canvas.getContext('2d');
-                            const maxWidth = 800;
-                            const maxHeight = 800;
+                            const maxWidth = 600;
+                            const maxHeight = 600;
                             let width = img.width;
                             let height = img.height;
-
                             if (width > height) {
                                 if (width > maxWidth) {
                                     height = Math.round((height * maxWidth) / width);
@@ -810,15 +888,12 @@
                                     height = maxHeight;
                                 }
                             }
-
                             canvas.width = width;
                             canvas.height = height;
                             ctx.drawImage(img, 0, 0, width, height);
-                            const base64 = canvas.toDataURL('image/jpeg', 0.7);
-                            resolve(base64);
+                            resolve(canvas.toDataURL('image/jpeg', 0.7));
                         };
                     } else {
-                        // For videos, return the base64 data without compression to maintain quality
                         resolve(e.target.result);
                     }
                 };
@@ -826,184 +901,25 @@
             });
         }
 
-        loginBtn.onclick = async () => {
-            const email = loginEmail.value.trim();
-            const password = loginPassword.value.trim();
-            if (!email || !password) {
-                loginError.textContent = 'Por favor, ingresa correo y contraseña.';
-                return;
-            }
-            try {
-                await signInWithEmailAndPassword(auth, email, password);
-                loginError.textContent = '';
-            } catch (error) {
-                let errorMessage = 'Error al iniciar sesión. Verifica tus credenciales.';
-                if (error.code === 'auth/wrong-password') {
-                    errorMessage = 'Contraseña incorrecta.';
-                } else if (error.code === 'auth/user-not-found') {
-                    errorMessage = 'Usuario no encontrado.';
-                } else if (error.code === 'auth/too-many-requests') {
-                    errorMessage = 'Demasiados intentos. Intenta de nuevo más tarde.';
-                }
-                loginError.textContent = errorMessage;
-            }
-        };
-
-        registerBtn.onclick = async () => {
-            const email = loginEmail.value.trim();
-            const password = loginPassword.value.trim();
-            if (!email || !password) {
-                loginError.textContent = 'Por favor, ingresa correo y contraseña.';
-                return;
-            }
-            try {
-                await createUserWithEmailAndPassword(auth, email, password);
-                clientId = generateUUID();
-                localStorage.setItem('clientId', clientId);
-                loginError.textContent = '';
-                modal.style.display = 'flex';
-            } catch (error) {
-                if (error.code === 'auth/email-already-in-use') {
-                    await signInWithEmailAndPassword(auth, email, password);
-                    clientId = generateUUID();
-                    localStorage.setItem('clientId', clientId);
-                    loginError.textContent = '';
-                    modal.style.display = 'flex';
-                } else {
-                    let errorMessage = 'Error al registrarse. Intenta de nuevo.';
-                    if (error.code === 'auth/invalid-email') {
-                        errorMessage = 'Correo electrónico inválido.';
-                    } else if (error.code === 'auth/weak-password') {
-                        errorMessage = 'La contraseña debe tener al menos 6 caracteres.';
-                    }
-                    loginError.textContent = errorMessage;
-                }
-            }
-        };
-
-        selectProfileBtn.onclick = async () => {
-            const selectedClientId = profileSelect.value;
-            if (!selectedClientId) {
-                profileSelectError.textContent = 'Por favor, selecciona un perfil.';
-                return;
-            }
-            clientId = selectedClientId;
-            localStorage.setItem('clientId', clientId);
-            const email = auth.currentUser.email.replace(/\./g, '_');
-            const profileSnapshot = await get(ref(database, `users/${email}/${clientId}`));
-            profile = profileSnapshot.val();
-            localStorage.setItem('profile', JSON.stringify(profile));
-            profileSection.style.display = 'block';
-            profileSelectModal.style.display = 'none';
-            initializePostsListener();
-            initializeProfileListener();
-            initializePostFormToggle();
-            updateProfileUI();
-        };
-
-        newProfileBtn.onclick = () => {
-            clientId = generateUUID();
-            localStorage.setItem('clientId', clientId);
-            profileSelectModal.style.display = 'none';
-            modal.style.display = 'flex';
-        };
-
-        logoutBtn.onclick = async () => {
-            try {
-                await signOut(auth);
-                localStorage.removeItem('clientId');
-                localStorage.removeItem('profile');
-                profileSection.style.display = 'none';
-                loginModal.style.display = 'flex';
-                showNotification('¡Sesión cerrada!');
-            } catch (error) {
-                document.getElementById('error').textContent = 'Error al cerrar sesión. Intenta de nuevo.';
-            }
-        };
-
-        function initializeHamburgerMenu() {
-            hamburgerMenu.addEventListener('click', () => {
-                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-            });
-        }
-
-        function initializePostFormToggle() {
-            const togglePostForm = document.getElementById('toggle-post-form');
-            const postForm = document.getElementById('post-form');
-            togglePostForm.addEventListener('click', () => {
-                postForm.style.display = postForm.style.display === 'none' ? 'block' : 'none';
-            });
-        }
-
-        function initializeThemeToggle() {
-            const themeToggle = document.getElementById('theme-toggle');
-            const currentTheme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', currentTheme);
-            themeToggle.textContent = currentTheme === 'light' ? 'Cambiar a Tema Oscuro' : 'Cambiar a Tema Claro';
-            
-            themeToggle.addEventListener('click', () => {
-                const newTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                themeToggle.textContent = newTheme === 'light' ? 'Cambiar a Tema Oscuro' : 'Cambiar a Tema Claro';
-            });
-        }
-
-        const modalDisplayName = document.getElementById('modal-display-name');
-        const modalBio = document.getElementById('modal-bio');
-        const modalProfilePicInput = document.getElementById('modal-profile-pic-input');
-        const modalSaveProfile = document.getElementById('modal-save-profile');
-        const modalError = document.getElementById('modal-error');
-        const modalProfilePic = document.getElementById('modal-profile-pic');
-        const profilePic = document.getElementById('profile-pic');
-        const profileName = document.getElementById('profile-name');
-        const profileBio = document.getElementById('profile-bio');
-        const followerCount = document.getElementById('follower-count');
-        const postCount = document.getElementById('post-count');
-        const editProfileBtn = document.getElementById('edit-profile');
-        const viewMyPostsBtn = document.getElementById('view-my-posts');
-        const viewFollowersBtn = document.getElementById('view-followers');
-        const viewFollowingBtn = document.getElementById('view-following');
-        const goBackBtn = document.getElementById('go-back');
-        const goBackAltBtn = document.getElementById('go-back-alt');
-        const postsDiv = document.getElementById('posts');
-        const postContent = document.getElementById('post-content');
-        const postImage = document.getElementById('post-image');
-        const postVideo = document.getElementById('post-video');
-        const submitPost = document.getElementById('submit-post');
-        const errorDiv = document.getElementById('error');
-        const loadingDiv = document.getElementById('loading');
-        const searchBar = document.getElementById('search-bar');
-        const sortOptions = document.getElementById('sort-options');
-        const notification = document.getElementById('notification');
-
-        function updateProfileUI() {
-            if (profile) {
-                profilePic.src = profile.profilePic;
-                profileName.textContent = profile.displayName;
-                profileBio.textContent = profile.bio || '';
-                profileName.addEventListener('click', () => viewUserProfile(clientId));
-            }
-        }
-
-        function renderPosts(postsToRender, showReplies = true) {
-            postsDiv.innerHTML = '';
+        function renderPosts(postsToRender, targetDiv = postsDiv) {
+            targetDiv.innerHTML = '';
             if (!postsToRender || postsToRender.length === 0) {
-                postsDiv.innerHTML = '<p>No hay publicaciones disponibles.</p>';
+                targetDiv.innerHTML = '<p>No hay contenido disponible.</p>';
                 return;
             }
             postsToRender.forEach(post => {
-                if (!post || !post.id || !post.content || typeof post.content !== 'string') {
-                    console.warn('Publicación inválida ignorada:', post);
-                    return;
-                }
+                if (!post || !post.id || !post.content) return;
+                if (targetDiv === videosDiv && !post.video) return;
+                const postLikes = Array.isArray(post.likes) ? post.likes : [];
                 const postElement = document.createElement('div');
                 postElement.className = 'post';
                 const mediaContent = post.image ? `<img src="${post.image}" alt="Imagen de Publicación" onerror="this.style.display='none';">` :
-                                  post.video ? `<video controls src="${post.video}" onerror="this.style.display='none';"></video>` : '';
+                                   post.video ? `<video controls src="${post.video}" onerror="this.style.display='none';"></video>` : '';
+                const isFollowing = profile?.following?.includes(post.clientId) || false;
+                const followButton = post.clientId !== clientId ? (isFollowing ? `<button class="unfollow-btn">Dejar de Seguir</button>` : `<button class="follow-btn">Seguir</button>`) : '';
                 postElement.innerHTML = `
                     <div class="post-header">
-                        <img src="${post.profilePic || 'https://via.placeholder.com/80'}" alt="Usuario" onerror="this.src='https://via.placeholder.com/80';">
+                        <img src="${post.profilePic || 'https://via.placeholder.com/60'}" alt="Usuario" onclick="viewUserProfile('${post.clientId}')">
                         <p><strong class="username" data-client-id="${post.clientId}">${post.user || 'Anónimo'}</strong> (${new Date(post.timestamp || Date.now()).toLocaleString()}):</p>
                     </div>
                     <div class="post-content">
@@ -1011,24 +927,18 @@
                         ${mediaContent}
                     </div>
                     <div class="post-actions">
-                        <button class="like-btn ${post.likes?.includes(clientId) ? 'liked' : ''}">
+                        <button class="like-btn ${postLikes.includes(clientId) ? 'liked' : ''}">
                             <img src="https://static.vecteezy.com/system/resources/previews/009/875/160/original/3d-love-heart-red-color-and-speech-bubble-free-png.png" alt="Like">
-                            (${post.likes ? post.likes.length : 0})
+                            (${postLikes.length})
                         </button>
                         ${post.clientId === clientId ? `
                             <button class="edit-btn">Editar</button>
                             <button class="delete-btn">Eliminar</button>
-                        ` : ''}
+                        ` : followButton}
                         <button class="reply-btn">
-                            <img src="https://static.vecteezy.com/system/resources/previews/012/627/893/non_2x/3d-message-bubble-free-png.png" alt="Comentar">
-                            Comentar
+                            <img src="https://static.vecteezy.com/system/resources/previews/028/537/450/original/3d-comment-icon-free-png.png" alt="Comment">
+                            Comentar (${Object.keys(post.replies || {}).length})
                         </button>
-                        <button class="toggle-replies-btn">${showReplies ? 'Ocultar Respuestas' : 'Mostrar Respuestas'}</button>
-                        ${post.clientId !== clientId ? `
-                            <button class="follow-btn ${post.followers?.includes(clientId) ? 'followed' : ''}">
-                                ${post.followers?.includes(clientId) ? 'Dejar de Seguir' : 'Seguir'}
-                            </button>
-                        ` : ''}
                     </div>
                     <div id="edit-form-${post.id}" style="display: none;">
                         <textarea id="edit-content-${post.id}">${post.content}</textarea>
@@ -1050,133 +960,451 @@
                         </div>
                         <button class="reply-submit-btn">Enviar Respuesta</button>
                     </div>
-                    <div class="replies" style="display: ${showReplies ? 'block' : 'none'};">
-                        ${post.replies ? Object.entries(post.replies).map(([replyId, reply]) => `
+                    <div class="replies">
+                        ${post.replies ? Object.entries(post.replies).map(([replyId, reply]) => {
+                            const replyLikes = Array.isArray(reply.likes) ? reply.likes : [];
+                            return `
                             <div class="reply">
                                 <div class="post-header">
-                                    <img src="${reply.profilePic || 'https://via.placeholder.com/80'}" alt="Usuario" onerror="this.src='https://via.placeholder.com/80';">
+                                    <img src="${reply.profilePic || 'https://via.placeholder.com/60'}" alt="Usuario" onclick="viewUserProfile('${reply.clientId}')">
                                     <p><strong class="username" data-client-id="${reply.clientId}">${reply.user || 'Anónimo'}</strong> (${new Date(reply.timestamp || Date.now()).toLocaleString()}):</p>
                                     ${reply.clientId === clientId ? `<button class="delete-reply-btn" data-reply-id="${replyId}">Eliminar</button>` : ''}
                                 </div>
                                 <p>${reply.content || ''}</p>
-                                ${reply.image ? `<img src="${reply.image}" alt="Imagen de Respuesta" onerror="this.style.display='none';">` : 
+                                ${reply.image ? `<img src="${reply.image}" alt="Imagen de Respuesta" onerror="this.style.display='none';">` :
                                   reply.video ? `<video controls src="${reply.video}" onerror="this.style.display='none';"></video>` : ''}
                             </div>
-                        `).join('') : ''}
+                        `}).join('') : ''}
                     </div>
                 `;
-                postsDiv.appendChild(postElement);
-
+                targetDiv.appendChild(postElement);
                 postElement.querySelector('.like-btn')?.addEventListener('click', () => toggleLike(post.id));
                 postElement.querySelector('.edit-btn')?.addEventListener('click', () => editPost(post.id));
                 postElement.querySelector('.delete-btn')?.addEventListener('click', () => deletePost(post.id));
+                postElement.querySelector('.follow-btn')?.addEventListener('click', () => followUser(post.clientId));
+                postElement.querySelector('.unfollow-btn')?.addEventListener('click', () => unfollowUser(post.clientId));
                 postElement.querySelector('.reply-btn')?.addEventListener('click', () => showReplyForm(post.id));
                 postElement.querySelector('.edit-submit-btn')?.addEventListener('click', () => submitEdit(post.id));
                 postElement.querySelector('.reply-submit-btn')?.addEventListener('click', () => submitReply(post.id));
-                postElement.querySelector('.toggle-replies-btn')?.addEventListener('click', () => toggleReplies(post.id));
-                postElement.querySelector('.follow-btn')?.addEventListener('click', () => toggleFollow(post.clientId));
-                postElement.querySelector('.username')?.addEventListener('click', () => viewUserProfile(post.clientId));
                 postElement.querySelectorAll('.delete-reply-btn')?.forEach(btn => {
                     btn.addEventListener('click', () => deleteReply(post.id, btn.dataset.replyId));
                 });
-            });
-        }
-
-        function filterAndSortPosts(posts) {
-            let filteredPosts = [...posts];
-            const searchTerm = searchBar.value.toLowerCase();
-            if (searchTerm) {
-                filteredPosts = filteredPosts.filter(post =>
-                    (post.content || '').toLowerCase().includes(searchTerm) ||
-                    (post.user || '').toLowerCase().includes(searchTerm)
-                );
-            }
-            const sortOption = sortOptions.value;
-            if (sortOption === 'timestamp-asc') {
-                filteredPosts.sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
-            } else if (sortOption === 'timestamp-desc') {
-                filteredPosts.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
-            } else if (sortOption === 'likes-desc') {
-                filteredPosts.sort((a, b) => (b.likes?.length || 0) - (a.likes?.length || 0));
-            }
-            return filteredPosts;
-        }
-
-        function initializePostsListener(retryCount = 0, maxRetries = 3) {
-            if (!database) {
-                document.getElementById('error').textContent = 'Error de conexión. Verifica tu conexión a internet.';
-                return;
-            }
-            const postsQuery = query(ref(database, 'posts'), orderByChild('timestamp'), limitToLast(20));
-            onValue(postsQuery, (snapshot) => {
-                try {
-                    if (!snapshot.exists()) {
-                        renderPosts([]);
-                        return;
+                if (targetDiv === videosDiv) {
+                    const videoElement = postElement.querySelector('video');
+                    if (videoElement) {
+                        videoElement.addEventListener('contextmenu', (e) => e.preventDefault());
+                        videoElement.controlsList = 'nodownload';
                     }
-                    const posts = [];
-                    snapshot.forEach(child => {
-                        const postData = child.val();
-                        if (postData && postData.id && postData.content) {
-                            posts.push(postData);
-                        }
-                    });
-                    renderPosts(filterAndSortPosts(posts));
-                    showNotification('¡Publicaciones actualizadas!');
-                } catch (error) {
-                    console.error('Error al procesar publicaciones:', error);
-                    document.getElementById('error').textContent = 'Error al cargar publicaciones. Intenta de nuevo.';
-                }
-            }, (error) => {
-                let errorMessage = 'Error al conectar con la base de datos.';
-                if (error.code === 'PERMISSION_DENIED') {
-                    errorMessage = 'Permisos insuficientes para leer los datos.';
-                } else if (error.code === 'NETWORK_ERROR') {
-                    errorMessage = 'Error de red. Verifica tu conexión a internet.';
-                }
-                document.getElementById('error').textContent = errorMessage;
-                if (retryCount < maxRetries) {
-                    setTimeout(() => initializePostsListener(retryCount + 1, maxRetries), 5000);
-                } else {
-                    document.getElementById('error').textContent = 'Error persistente. Recarga la página.';
                 }
             });
         }
 
-        function initializeProfileListener() {
-            if (!database || !clientId) return;
-            const userRef = ref(database, `users/${auth.currentUser.email.replace(/\./g, '_')}/${clientId}`);
-            onValue(userRef, (snapshot) => {
-                const userData = snapshot.val();
-                if (userData) {
-                    profile = userData;
-                    localStorage.setItem('profile', JSON.stringify(profile));
-                    followerCount.textContent = `Seguidores: ${userData.followers ? userData.followers.length : 0}`;
-                    postCount.textContent = `Publicaciones: ${userData.postCount || 0}`;
-                    updateProfileUI();
-                }
-            });
-        }
-
-        function showNotification(message) {
-            notification.textContent = message;
-            notification.style.display = 'block';
-            setTimeout(() => {
-                notification.style.display = 'none';
-            }, 3000);
-        }
-
-        async function saveProfile(name, bio, file) {
-            if (!name) {
-                modalError.textContent = 'Por favor, ingresa un nombre.';
-                return;
-            }
-            if (!auth.currentUser) {
-                modalError.textContent = 'Debes estar autenticado para guardar el perfil.';
+        document.getElementById('login-btn').onclick = async () => {
+            const email = document.getElementById('login-email').value.trim();
+            const password = document.getElementById('login-password').value.trim();
+            if (!email || !password) {
+                document.getElementById('login-error').textContent = 'Ingresa correo y contraseña.';
                 return;
             }
             try {
-                let profilePicUrl = profile?.profilePic || 'https://via.placeholder.com/80';
+                await signInWithEmailAndPassword(auth, email, password);
+            } catch (error) {
+                document.getElementById('login-error').textContent = error.code === 'auth/wrong-password' ? 'Contraseña incorrecta.' : 'Error al iniciar sesión.';
+            }
+        };
+
+        document.getElementById('register-btn').onclick = async () => {
+            const email = document.getElementById('login-email').value.trim();
+            const password = document.getElementById('login-password').value.trim();
+            if (!email || !password) {
+                document.getElementById('login-error').textContent = 'Ingresa correo y contraseña.';
+                return;
+            }
+            try {
+                await createUserWithEmailAndPassword(auth, email, password);
+                clientId = generateUUID();
+                localStorage.setItem('clientId', clientId);
+                modal.style.display = 'flex';
+            } catch (error) {
+                document.getElementById('login-error').textContent = error.code === 'auth/email-already-in-use' ? 'Correo ya registrado.' : 'Error al registrarse.';
+            }
+        };
+
+        document.getElementById('logout-btn').onclick = async () => {
+            if (confirm('¿Estás seguro de cerrar sesión?')) {
+                await signOut(auth);
+                localStorage.removeItem('clientId');
+                localStorage.removeItem('profile');
+                profileSection.style.display = 'none';
+                loginModal.style.display = 'flex';
+                showNotification('¡Sesión cerrada!');
+            }
+        };
+
+        document.getElementById('messages-btn').onclick = () => {
+            showNotification('Función de mensajes en desarrollo.');
+        };
+
+        function initializeThemeToggle() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            themeToggle.textContent = currentTheme === 'light' ? 'Cambiar a Tema Oscuro' : 'Cambiar a Tema Claro';
+            themeToggle.addEventListener('click', () => {
+                const newTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeToggle.textContent = newTheme === 'light' ? 'Cambiar a Tema Oscuro' : 'Cambiar a Tema Claro';
+            });
+        }
+
+        function initializeSectionToggle() {
+            document.getElementById('show-posts').addEventListener('click', () => {
+                currentSection = 'posts';
+                forumSection.style.display = 'block';
+                videoSection.style.display = 'none';
+                followersSection.style.display = 'none';
+                userProfileSection.style.display = 'none';
+                document.getElementById('show-posts').classList.add('active');
+                document.getElementById('show-videos').classList.remove('active');
+                document.getElementById('show-followers').classList.remove('active');
+                initializePostsListener();
+            });
+            document.getElementById('show-videos').addEventListener('click', () => {
+                currentSection = 'videos';
+                forumSection.style.display = 'none';
+                videoSection.style.display = 'block';
+                followersSection.style.display = 'none';
+                userProfileSection.style.display = 'none';
+                document.getElementById('show-videos').classList.add('active');
+                document.getElementById('show-posts').classList.remove('active');
+                document.getElementById('show-followers').classList.remove('active');
+                initializePostsListener();
+            });
+            document.getElementById('show-followers').addEventListener('click', () => {
+                currentSection = 'followers';
+                forumSection.style.display = 'none';
+                videoSection.style.display = 'none';
+                followersSection.style.display = 'block';
+                userProfileSection.style.display = 'none';
+                document.getElementById('show-followers').classList.add('active');
+                document.getElementById('show-posts').classList.remove('active');
+                document.getElementById('show-videos').classList.remove('active');
+                renderFollowers();
+            });
+        }
+
+        document.getElementById('toggle-post-form').addEventListener('click', () => {
+            const postForm = document.getElementById('post-form');
+            postForm.style.display = postForm.style.display === 'none' ? 'block' : 'none';
+            if (postForm.style.display === 'block' && !mainVideo.paused) {
+                mainVideo.pause();
+            }
+        });
+
+        document.getElementById('view-followers').addEventListener('click', () => {
+            currentSection = 'followers';
+            forumSection.style.display = 'none';
+            videoSection.style.display = 'none';
+            followersSection.style.display = 'block';
+            userProfileSection.style.display = 'none';
+            document.getElementById('show-followers').classList.add('active');
+            document.getElementById('show-posts').classList.remove('active');
+            document.getElementById('show-videos').classList.remove('active');
+            renderFollowers();
+        });
+
+        document.getElementById('back-to-home-profile').addEventListener('click', () => {
+            currentSection = 'posts';
+            forumSection.style.display = 'block';
+            videoSection.style.display = 'none';
+            followersSection.style.display = 'none';
+            userProfileSection.style.display = 'none';
+            document.getElementById('show-posts').classList.add('active');
+            document.getElementById('show-videos').classList.remove('active');
+            document.getElementById('show-followers').classList.remove('active');
+            initializePostsListener();
+        });
+
+        document.getElementById('go-back-profile').addEventListener('click', () => {
+            userProfileSection.style.display = 'none';
+            if (currentSection === 'posts') {
+                forumSection.style.display = 'block';
+            } else if (currentSection === 'videos') {
+                videoSection.style.display = 'block';
+            } else if (currentSection === 'followers') {
+                followersSection.style.display = 'block';
+            }
+            initializePostsListener();
+        });
+
+        window.goToHome = function() {
+            currentSection = 'posts';
+            forumSection.style.display = 'block';
+            videoSection.style.display = 'none';
+            followersSection.style.display = 'none';
+            userProfileSection.style.display = 'none';
+            document.getElementById('show-posts').classList.add('active');
+            document.getElementById('show-videos').classList.remove('active');
+            document.getElementById('show-followers').classList.remove('active');
+            initializePostsListener();
+        };
+
+        function updateProfileUI() {
+            if (profile) {
+                document.getElementById('profile-pic').src = profile.profilePic || 'https://via.placeholder.com/60';
+                document.getElementById('profile-name').textContent = profile.displayName || 'Anónimo';
+                document.getElementById('profile-bio').textContent = profile.bio || '';
+                document.getElementById('follower-count').textContent = `Seguidores: ${profile.followers?.length || 0}`;
+                document.getElementById('post-count').textContent = `Publicaciones: ${profile.postCount || 0}`;
+            }
+        }
+
+        async function renderFollowers() {
+            followersDiv.innerHTML = '';
+            if (!profile?.followers?.length) {
+                followersDiv.innerHTML = '<p>No tienes seguidores.</p>';
+                return;
+            }
+            try {
+                const usersRef = ref(database, 'users');
+                const snapshot = await get(usersRef);
+                const users = snapshot.val() || {};
+                const followerList = [];
+                for (const [email, clientIds] of Object.entries(users)) {
+                    for (const [id, userData] of Object.entries(clientIds)) {
+                        if (typeof userData === 'object' && userData !== null && profile.followers.includes(id)) {
+                            followerList.push({ clientId: id, ...userData, email });
+                        }
+                    }
+                }
+                if (followerList.length === 0) {
+                    followersDiv.innerHTML = '<p>No tienes seguidores.</p>';
+                    return;
+                }
+                followerList.forEach(follower => {
+                    const followerElement = document.createElement('div');
+                    followerElement.className = 'follower-item';
+                    followerElement.innerHTML = `
+                        <img src="${follower.profilePic || 'https://via.placeholder.com/40'}" alt="Foto de ${follower.displayName}" onclick="viewUserProfile('${follower.clientId}')">
+                        <p>${follower.displayName || 'Anónimo'}</p>
+                        <button class="unfollow-btn" data-client-id="${follower.clientId}">Dejar de Seguir</button>
+                    `;
+                    followersDiv.appendChild(followerElement);
+                });
+                followersDiv.querySelectorAll('.unfollow-btn').forEach(btn => {
+                    btn.addEventListener('click', () => unfollowUser(btn.dataset.clientId));
+                });
+            } catch (error) {
+                followersDiv.innerHTML = '<p>Error al cargar seguidores.</p>';
+            }
+        }
+
+        async function initializeFollowersListener() {
+            const usersRef = ref(database, 'users');
+            onValue(usersRef, async (snapshot) => {
+                const users = snapshot.val() || {};
+                for (const [email, clientIds] of Object.entries(users)) {
+                    for (const [id, userData] of Object.entries(clientIds)) {
+                        if (id === clientId && typeof userData === 'object' && userData !== null) {
+                            profile = { ...userData, email: email.replace(/_/g, '.'), clientId };
+                            localStorage.setItem('profile', JSON.stringify(profile));
+                            updateProfileUI();
+                            break;
+                        }
+                    }
+                }
+            }, (error) => {
+                errorDiv.textContent = 'Error al actualizar seguidores.';
+            });
+        }
+
+        async function followUser(targetClientId) {
+            if (!profile || targetClientId === clientId) return;
+            try {
+                const email = profile.email.replace(/\./g, '_');
+                const targetUserRef = ref(database, `users/${email}/${targetClientId}`);
+                const targetSnapshot = await get(targetUserRef);
+                const targetProfile = targetSnapshot.val();
+                if (targetProfile && !targetProfile.followers?.includes(clientId)) {
+                    const updatedFollowers = [...(targetProfile.followers || []), clientId];
+                    await update(targetUserRef, { followers: updatedFollowers });
+                    showNotification('¡Te empezó a seguir alguien!', true, targetClientId);
+                }
+                const userRef = ref(database, `users/${email}/${clientId}`);
+                const userSnapshot = await get(userRef);
+                const userProfile = userSnapshot.val() || {};
+                if (!userProfile.following?.includes(targetClientId)) {
+                    const updatedFollowing = [...(userProfile.following || []), targetClientId];
+                    await update(userRef, { following: updatedFollowing });
+                    profile.following = updatedFollowing;
+                    localStorage.setItem('profile', JSON.stringify(profile));
+                    initializePostsListener();
+                }
+            } catch (error) {
+                errorDiv.textContent = 'Error al seguir usuario.';
+            }
+        }
+
+        async function unfollowUser(targetClientId) {
+            if (!profile || targetClientId === clientId) return;
+            try {
+                const email = profile.email.replace(/\./g, '_');
+                const targetUserRef = ref(database, `users/${email}/${targetClientId}`);
+                const targetSnapshot = await get(targetUserRef);
+                const targetProfile = targetSnapshot.val();
+                if (targetProfile && targetProfile.followers?.includes(clientId)) {
+                    const updatedFollowers = targetProfile.followers.filter(id => id !== clientId);
+                    await update(targetUserRef, { followers: updatedFollowers });
+                    showNotification('¡Alguien dejó de seguirte!', true, targetClientId);
+                }
+                const userRef = ref(database, `users/${email}/${clientId}`);
+                const userSnapshot = await get(userRef);
+                const userProfile = userSnapshot.val() || {};
+                if (userProfile.following?.includes(targetClientId)) {
+                    const updatedFollowing = userProfile.following.filter(id => id !== targetClientId);
+                    await update(userRef, { following: updatedFollowing });
+                    profile.following = updatedFollowing;
+                    localStorage.setItem('profile', JSON.stringify(profile));
+                    initializePostsListener();
+                }
+            } catch (error) {
+                errorDiv.textContent = 'Error al dejar de seguir usuario.';
+            }
+        }
+
+        async function filterPostsAndUsers(searchTerm) {
+            const postsRef = ref(database, 'posts');
+            const usersRef = ref(database, 'users');
+            const [postsSnapshot, usersSnapshot] = await Promise.all([get(postsRef), get(usersRef)]);
+            const posts = [];
+            postsSnapshot.forEach(child => {
+                const postData = child.val();
+                if (postData && postData.id && postData.content) {
+                    postData.likes = Array.isArray(postData.likes) ? postData.likes : [];
+                    if (postData.replies) {
+                        Object.values(postData.replies).forEach(reply => {
+                            reply.likes = Array.isArray(reply.likes) ? reply.likes : [];
+                        });
+                    }
+                    posts.push(postData);
+                }
+            });
+            const users = [];
+            usersSnapshot.forEach(emailNode => {
+                emailNode.forEach(clientNode => {
+                    const userData = clientNode.val();
+                    if (typeof userData === 'object' && userData !== null) {
+                        users.push({
+                            clientId: clientNode.key,
+                            email: emailNode.key.replace(/_/g, '.'),
+                            ...userData
+                        });
+                    }
+                });
+            });
+
+            if (!searchTerm) return { posts, users: [] };
+            searchTerm = searchTerm.toLowerCase();
+            const filteredPosts = posts.filter(post =>
+                (post.content || '').toLowerCase().includes(searchTerm) ||
+                (post.user || '').toLowerCase().includes(searchTerm)
+            );
+            const filteredUsers = users.filter(user =>
+                (user.displayName || '').toLowerCase().includes(searchTerm)
+            );
+            return { posts: filteredPosts, users: filteredUsers };
+        }
+
+        function initializePostsListener() {
+            const postsRef = ref(database, 'posts');
+            onValue(postsRef, (snapshot) => {
+                const posts = [];
+                snapshot.forEach(child => {
+                    const postData = child.val();
+                    if (postData && postData.id && postData.content) {
+                        postData.likes = Array.isArray(postData.likes) ? postData.likes : [];
+                        if (postData.replies) {
+                            Object.values(postData.replies).forEach(reply => {
+                                reply.likes = Array.isArray(reply.likes) ? reply.likes : [];
+                            });
+                        }
+                        posts.push(postData);
+                    }
+                });
+                const sortedPosts = posts.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+                renderPosts(sortedPosts, currentSection === 'posts' ? postsDiv : videosDiv);
+                if (currentSection === 'videos' && mainVideo) {
+                    mainVideo.addEventListener('contextmenu', (e) => e.preventDefault());
+                    mainVideo.controlsList = 'nodownload';
+                }
+            }, (error) => {
+                errorDiv.textContent = 'Error al cargar contenido.';
+            });
+        }
+
+        function initializeRealTimeNotifications() {
+            const usersRef = ref(database, 'users');
+            onChildChanged(usersRef, async (snapshot) => {
+                const emailNode = snapshot.val();
+                for (const [id, userData] of Object.entries(emailNode)) {
+                    if (id === clientId && profile && userData.followers?.includes(clientId)) {
+                        const followerSnapshot = await get(ref(database, `users/${profile.email.replace(/\./g, '_')}/${clientId}`));
+                        const followerProfile = followerSnapshot.val();
+                        if (followerProfile && !profile.followers?.includes(clientId)) {
+                            showNotification(`${followerProfile.displayName || 'Anónimo'} te empezó a seguir`, true);
+                        }
+                    }
+                }
+            });
+            const postsRef = ref(database, 'posts');
+            onChildChanged(postsRef, async (snapshot) => {
+                const post = snapshot.val();
+                if (!post || post.clientId === clientId || !profile) return;
+                const postLikes = Array.isArray(post.likes) ? post.likes : [];
+                const prevLikes = Array.isArray(post.prevLikes) ? post.prevLikes : [];
+                if (postLikes.includes(clientId) && !prevLikes.includes(clientId)) {
+                    const userSnapshot = await get(ref(database, `users/${post.email.replace(/\./g, '_')}/${post.clientId}`));
+                    const user = userSnapshot.val();
+                    if (typeof user === 'object' && user !== null) {
+                        const message = post.video ? `${user.displayName || 'Anónimo'} le dio like a tu video` : `${user.displayName || 'Anónimo'} le dio like a tu publicación`;
+                        showNotification(message, true, post.clientId);
+                    }
+                }
+                if (post.replies) {
+                    for (const [replyId, reply] of Object.entries(post.replies)) {
+                        if (reply.clientId !== clientId && !post.prevReplies?.[replyId]) {
+                            const userSnapshot = await get(ref(database, `users/${reply.email.replace(/\./g, '_')}/${reply.clientId}`));
+                            const user = userSnapshot.val();
+                            if (typeof user === 'object' && user !== null) {
+                                showNotification(`${user.displayName || 'Anónimo'} comentó en tu ${post.video ? 'video' : 'publicación'}`, true, post.clientId);
+                            }
+                        }
+                    }
+                }
+                await update(ref(database, `posts/${post.id}`), {
+                    prevLikes: postLikes,
+                    prevReplies: post.replies || {}
+                });
+            });
+            onChildAdded(postsRef, async (snapshot) => {
+                const post = snapshot.val();
+                if (!post || post.clientId !== clientId || !profile) return;
+                await update(ref(database, `posts/${post.id}`), { prevLikes: [], prevReplies: {} });
+            });
+        }
+
+        document.getElementById('modal-save-profile').onclick = async () => {
+            const name = document.getElementById('modal-display-name').value.trim();
+            const password = document.getElementById('modal-password').value.trim();
+            const bio = document.getElementById('modal-bio').value.trim();
+            const file = document.getElementById('modal-profile-pic-input').files[0];
+            if (!name) {
+                document.getElementById('modal-error').textContent = 'Ingresa un nombre.';
+                return;
+            }
+            try {
+                let profilePicUrl = profile?.profilePic || 'https://via.placeholder.com/60';
                 if (file) {
                     profilePicUrl = await compressMedia(file);
                 }
@@ -1186,211 +1414,66 @@
                     bio: bio || '',
                     email: auth.currentUser.email,
                     followers: profile?.followers || [],
-                    following: profile?.following || [],
-                    postCount: profile?.postCount || 0
+                    postCount: profile?.postCount || 0,
+                    following: profile?.following || []
                 };
-                localStorage.setItem('profile', JSON.stringify(profile));
+                if (password) {
+                    await updatePassword(auth.currentUser, password);
+                }
                 await set(ref(database, `users/${auth.currentUser.email.replace(/\./g, '_')}/${clientId}`), profile);
-                profilePic.src = profile.profilePic;
-                profileName.textContent = profile.displayName;
-                profileBio.textContent = profile.bio;
-                profileName.addEventListener('click', () => viewUserProfile(clientId));
+                localStorage.setItem('profile', JSON.stringify(profile));
+                updateProfileUI();
                 modal.style.display = 'none';
                 profileSection.style.display = 'block';
-                errorDiv.textContent = '';
-                modalError.textContent = '';
                 showNotification('¡Perfil guardado!');
                 initializePostsListener();
-                initializeProfileListener();
-                initializePostFormToggle();
             } catch (error) {
-                console.error('Error al guardar el perfil:', error);
-                modalError.textContent = 'Error al guardar el perfil. Intenta de nuevo.';
+                document.getElementById('modal-error').textContent = 'Error al guardar el perfil o actualizar la contraseña.';
             }
-        }
-
-        modalSaveProfile.onclick = () => {
-            const name = modalDisplayName.value.trim();
-            const bio = modalBio.value.trim();
-            const file = modalProfilePicInput.files[0];
-            saveProfile(name, bio, file);
         };
 
-        editProfileBtn.onclick = () => {
+        document.getElementById('modal-delete-account').onclick = async () => {
+            if (confirm('¿Estás seguro de eliminar tu cuenta? Esta acción no se puede deshacer.')) {
+                try {
+                    await deleteUser(auth.currentUser);
+                    await remove(ref(database, `users/${auth.currentUser.email.replace(/\./g, '_')}/${clientId}`));
+                    localStorage.removeItem('clientId');
+                    localStorage.removeItem('profile');
+                    profileSection.style.display = 'none';
+                    loginModal.style.display = 'flex';
+                    showNotification('¡Cuenta eliminada!');
+                } catch (error) {
+                    document.getElementById('modal-error').textContent = 'Error al eliminar la cuenta.';
+                }
+            }
+        };
+
+        document.getElementById('edit-profile').onclick = () => {
             modal.style.display = 'flex';
-            modalDisplayName.value = profile.displayName || '';
-            modalBio.value = profile.bio || '';
-            modalProfilePic.src = profile.profilePic || 'https://via.placeholder.com/80';
+            document.getElementById('modal-display-name').value = profile.displayName || '';
+            document.getElementById('modal-password').value = '';
+            document.getElementById('modal-bio').value = profile.bio || '';
         };
 
-        async function viewUserProfile(userId) {
-            if (!database) {
-                errorDiv.textContent = 'Error de conexión. Verifica tu conexión a internet.';
+        document.getElementById('submit-post').onclick = async () => {
+            const content = document.getElementById('post-content').value.trim();
+            if (!content) {
+                errorDiv.textContent = 'Ingresa un mensaje.';
                 return;
             }
             try {
-                const userSnapshot = await get(ref(database, `users/${auth.currentUser.email.replace(/\./g, '_')}/${userId}`));
-                const user = userSnapshot.val();
-                if (!user) {
-                    errorDiv.textContent = 'Usuario no encontrado.';
+                const imageFile = document.getElementById('post-image').files[0];
+                const videoFile = document.getElementById('post-video').files[0];
+                if (imageFile && videoFile) {
+                    errorDiv.textContent = 'Selecciona solo una imagen o un video.';
                     return;
                 }
-                postsDiv.innerHTML = `
-                    <div class="post">
-                        <div style="text-align: center;">
-                            <img src="${user.profilePic || 'https://via.placeholder.com/80'}" alt="Foto de Perfil" style="width: var(--image-size); height: var(--image-size); border-radius: 50%; margin-bottom: 16px;">
-                            <h2>${user.displayName || 'Anónimo'}</h2>
-                            <p>${user.bio || ''}</p>
-                            <div style="display: flex; justify-content: center; gap: 20px; margin: 16px 0;">
-                                <div>Seguidores: ${user.followers ? user.followers.length : 0}</div>
-                                <div>Publicaciones: ${user.postCount || 0}</div>
-                            </div>
-                            ${userId === clientId ? `
-                                <button onclick="document.getElementById('edit-profile').click()">Editar Perfil</button>
-                                <button onclick="document.getElementById('view-my-posts').click()">Ver Mis Publicaciones</button>
-                                <button onclick="document.getElementById('view-followers').click()">Ver Seguidores</button>
-                                <button onclick="document.getElementById('view-following').click()">Ver Seguidos</button>
-                            ` : `
-                                <button class="follow-btn ${user.followers?.includes(clientId) ? 'followed' : ''}" onclick="toggleFollow('${userId}')">
-                                    ${user.followers?.includes(clientId) ? 'Dejar de Seguir' : 'Seguir'}
-                                </button>
-                            `}
-                        </div>
-                    </div>
-                `;
-                dropdownMenu.style.display = 'none';
-            } catch (error) {
-                console.error('Error al cargar perfil:', error);
-                errorDiv.textContent = 'Error al cargar perfil. Intenta de nuevo.';
-            }
-        }
-
-        viewMyPostsBtn.onclick = () => {
-            viewUserPosts(clientId);
-            dropdownMenu.style.display = 'none';
-        };
-
-        viewFollowersBtn.onclick = async () => {
-            if (!database) {
-                errorDiv.textContent = 'Error de conexión. Verifica tu conexión a internet.';
-                return;
-            }
-            try {
-                const userRef = ref(database, `users/${auth.currentUser.email.replace(/\./g, '_')}/${clientId}/followers`);
-                const snapshot = await get(userRef);
-                const followers = snapshot.val() || [];
-                postsDiv.innerHTML = '<h3>Seguidores</h3>';
-                if (followers.length === 0) {
-                    postsDiv.innerHTML += '<p>No tienes seguidores.</p>';
-                    return;
-                }
-                const userPromises = followers.map(async (followerId) => {
-                    const userSnapshot = await get(ref(database, `users/${auth.currentUser.email.replace(/\./g, '_')}/${followerId}`));
-                    return { ...userSnapshot.val(), clientId: followerId };
-                });
-                const users = await Promise.all(userPromises);
-                users.forEach(user => {
-                    if (user) {
-                        const userElement = document.createElement('div');
-                        userElement.className = 'post';
-                        userElement.innerHTML = `
-                            <div class="post-header">
-                                <img src="${user.profilePic || 'https://via.placeholder.com/80'}" alt="Usuario">
-                                <p><strong class="username" data-client-id="${user.clientId}">${user.displayName}</strong></p>
-                            </div>
-                        `;
-                        userElement.querySelector('.username').addEventListener('click', () => viewUserProfile(user.clientId));
-                        postsDiv.appendChild(userElement);
-                    }
-                });
-                dropdownMenu.style.display = 'none';
-            } catch (error) {
-                console.error('Error al cargar seguidores:', error);
-                errorDiv.textContent = 'Error al cargar seguidores. Intenta de nuevo.';
-            }
-        };
-
-        viewFollowingBtn.onclick = async () => {
-            if (!database) {
-                errorDiv.textContent = 'Error de conexión. Verifica tu conexión a internet.';
-                return;
-            }
-            try {
-                const followingRef = ref(database, `users/${auth.currentUser.email.replace(/\./g, '_')}/${clientId}/following`);
-                const snapshot = await get(followingRef);
-                const following = snapshot.val() || [];
-                postsDiv.innerHTML = '<h3>Seguidos</h3>';
-                if (following.length === 0) {
-                    postsDiv.innerHTML += '<p>No sigues a nadie.</p>';
-                    return;
-                }
-                const userPromises = following.map(async (followedId) => {
-                    const userSnapshot = await get(ref(database, `users/${auth.currentUser.email.replace(/\./g, '_')}/${followedId}`));
-                    return { ...userSnapshot.val(), clientId: followedId };
-                });
-                const users = await Promise.all(userPromises);
-                users.forEach(user => {
-                    if (user) {
-                        const userElement = document.createElement('div');
-                        userElement.className = 'post';
-                        userElement.innerHTML = `
-                            <div class="post-header">
-                                <img src="${user.profilePic || 'https://via.placeholder.com/80'}" alt="Usuario">
-                                <p><strong class="username" data-client-id="${user.clientId}">${user.displayName}</strong></p>
-                            </div>
-                        `;
-                        userElement.querySelector('.username').addEventListener('click', () => viewUserProfile(user.clientId));
-                        postsDiv.appendChild(userElement);
-                    }
-                });
-                dropdownMenu.style.display = 'none';
-            } catch (error) {
-                console.error('Error al cargar seguidos:', error);
-                errorDiv.textContent = 'Error al cargar seguidos. Intenta de nuevo.';
-            }
-        };
-
-        goBackBtn.onclick = goBackAltBtn.onclick = () => {
-            initializePostsListener();
-            dropdownMenu.style.display = 'none';
-        };
-
-        async function viewUserPosts(userId) {
-            if (!database) {
-                errorDiv.textContent = 'Error de conexión. Verifica tu conexión a internet.';
-                return;
-            }
-            try {
-                const postsSnapshot = await get(ref(database, 'posts'));
-                const userSnapshot = await get(ref(database, `users/${auth.currentUser.email.replace(/\./g, '_')}/${userId}`));
-                const user = userSnapshot.val();
-                const posts = [];
-                postsSnapshot.forEach(child => {
-                    const postData = child.val();
-                    if (postData && postData.id && postData.content && postData.clientId === userId) {
-                        posts.push(postData);
-                    }
-                });
-                postsDiv.innerHTML = `<h3>Publicaciones de ${user?.displayName || 'Usuario'}</h3>`;
-                renderPosts(filterAndSortPosts(posts));
-            } catch (error) {
-                console.error('Error al cargar publicaciones del usuario:', error);
-                errorDiv.textContent = 'Error al cargar publicaciones. Intenta de nuevo.';
-            }
-        }
-
-        async function submitPostWithRetry(content, imageFile, videoFile, retries = 3, delay = 5000) {
-            if (!database || !auth.currentUser) {
-                errorDiv.textContent = 'Error de conexión o usuario no autenticado.';
-                return false;
-            }
-            try {
-                let imageUrl = null;
-                let videoUrl = null;
+                let imageUrl = null, videoUrl = null;
                 if (imageFile) {
                     imageUrl = await compressMedia(imageFile);
                 } else if (videoFile) {
                     videoUrl = await compressMedia(videoFile, true);
+                    if (!mainVideo.paused) mainVideo.pause();
                 }
                 const newPost = {
                     id: generateUUID(),
@@ -1403,390 +1486,286 @@
                     video: videoUrl,
                     replies: {},
                     likes: [],
+                    prevLikes: [],
+                    prevReplies: {},
                     followers: [],
                     email: auth.currentUser.email
                 };
                 await set(ref(database, 'posts/' + newPost.id), newPost);
-                const userRef = ref(database, `users/${auth.currentUser.email.replace(/\./g, '_')}/${clientId}`);
-                const userSnapshot = await get(userRef);
-                const userData = userSnapshot.val() || { postCount: 0 };
-                await update(userRef, { postCount: (userData.postCount || 0) + 1 });
+                await update(ref(database, `users/${auth.currentUser.email.replace(/\./g, '_')}/${clientId}`), {
+                    postCount: (profile.postCount || 0) + 1
+                });
                 document.getElementById('post-form').style.display = 'none';
-                return true;
+                document.getElementById('post-content').value = '';
+                document.getElementById('post-image').value = '';
+                document.getElementById('post-video').value = '';
+                showNotification('¡Publicación creada!');
             } catch (error) {
-                if (retries > 0 && error.message.includes('Tiempo de espera agotado')) {
-                    await new Promise(resolve => setTimeout(resolve, delay));
-                    return submitPostWithRetry(content, imageFile, videoFile, retries - 1, delay);
-                }
-                throw error;
-            }
-        }
-
-        submitPost.onclick = async () => {
-            if (!profile || !auth.currentUser) {
-                errorDiv.textContent = 'Por favor, configura tu perfil y asegúrate de estar autenticado.';
-                return;
-            }
-            const content = postContent.value.trim();
-            if (!content) {
-                errorDiv.textContent = 'Por favor, ingresa un mensaje.';
-                return;
-            }
-            loadingDiv.textContent = 'Publicando...';
-            submitPost.disabled = true;
-            try {
-                const imageFile = postImage.files[0];
-                const videoFile = postVideo.files[0];
-                if (imageFile && videoFile) {
-                    throw new Error('Por favor, selecciona solo una imagen o un video.');
-                }
-                if (imageFile && !['image/jpeg', 'image/png', 'image/gif'].includes(imageFile.type)) {
-                    throw new Error('Archivo inválido. Selecciona una imagen válida (JPEG, PNG, GIF).');
-                }
-                if (videoFile && !['video/mp4', 'video/webm', 'video/ogg'].includes(videoFile.type)) {
-                    throw new Error('Archivo inválido. Selecciona un video válido (MP4, WebM, OGG).');
-                }
-                const success = await submitPostWithRetry(content, imageFile, videoFile);
-                if (success) {
-                    postContent.value = '';
-                    postImage.value = '';
-                    postVideo.value = '';
-                    errorDiv.textContent = '';
-                    loadingDiv.textContent = '';
-                    showNotification('¡Publicación creada!');
-                }
-            } catch (error) {
-                console.error('Error al publicar:', error);
-                errorDiv.textContent = 'Error al publicar. Intenta de nuevo.';
-                loadingDiv.textContent = '';
-            } finally {
-                submitPost.disabled = false;
+                errorDiv.textContent = 'Error al publicar.';
             }
         };
 
         window.deletePost = async (postId) => {
-            if (!database || !auth.currentUser) {
-                errorDiv.textContent = 'Error de conexión o usuario no autenticado.';
-                return;
-            }
-            loadingDiv.textContent = 'Eliminando...';
             try {
                 const postRef = ref(database, 'posts/' + postId);
                 const snapshot = await get(postRef);
                 if (snapshot.val()?.clientId === clientId) {
                     await remove(postRef);
-                    const userRef = ref(database, `users/${auth.currentUser.email.replace(/\./g, '_')}/${clientId}`);
-                    const userSnapshot = await get(userRef);
-                    const userData = userSnapshot.val() || { postCount: 0 };
-                    await update(userRef, { postCount: Math.max(0, (userData.postCount || 0) - 1) });
-                    loadingDiv.textContent = '';
+                    await update(ref(database, `users/${auth.currentUser.email.replace(/\./g, '_')}/${clientId}`), {
+                        postCount: Math.max(0, (profile.postCount || 0) - 1)
+                    });
                     showNotification('¡Publicación eliminada!');
                 } else {
                     errorDiv.textContent = 'No tienes permiso para eliminar esta publicación.';
-                    loadingDiv.textContent = '';
                 }
             } catch (error) {
-                console.error('Error al eliminar publicación:', error);
-                errorDiv.textContent = 'Error al eliminar publicación. Intenta de nuevo.';
-                loadingDiv.textContent = '';
-            }
-        };
-
-        window.deleteReply = async (postId, replyId) => {
-            if (!database || !auth.currentUser) {
-                errorDiv.textContent = 'Error de conexión o usuario no autenticado.';
-                return;
-            }
-            loadingDiv.textContent = 'Eliminando respuesta...';
-            try {
-                const replyRef = ref(database, `posts/${postId}/replies/${replyId}`);
-                const snapshot = await get(replyRef);
-                if (snapshot.val()?.clientId === clientId) {
-                    await remove(replyRef);
-                    loadingDiv.textContent = '';
-                    showNotification('¡Respuesta eliminada!');
-                } else {
-                    errorDiv.textContent = 'No tienes permiso para eliminar esta respuesta.';
-                    loadingDiv.textContent = '';
-                }
-            } catch (error) {
-                console.error('Error al eliminar respuesta:', error);
-                errorDiv.textContent = 'Error al eliminar respuesta. Intenta de nuevo.';
-                loadingDiv.textContent = '';
+                errorDiv.textContent = 'Error al eliminar publicación.';
             }
         };
 
         window.editPost = (postId) => {
-            if (!database || !auth.currentUser) {
-                errorDiv.textContent = 'Error de conexión o usuario no autenticado.';
-                return;
-            }
-            get(ref(database, 'posts/' + postId)).then((snapshot) => {
-                if (snapshot.val()?.clientId === clientId) {
-                    const editForm = document.getElementById(`edit-form-${postId}`);
-                    if (editForm) {
-                        editForm.style.display = 'block';
-                    }
-                } else {
-                    errorDiv.textContent = 'No tienes permiso para editar esta publicación.';
-                }
-            }).catch((error) => {
-                console.error('Error al verificar publicación:', error);
-                errorDiv.textContent = 'Error al verificar publicación. Intenta de nuevo.';
-            });
+            document.getElementById(`edit-form-${postId}`).style.display = 'block';
         };
 
         window.submitEdit = async (postId) => {
             const content = document.getElementById(`edit-content-${postId}`).value.trim();
             if (!content) {
-                errorDiv.textContent = 'Por favor, ingresa un mensaje.';
+                errorDiv.textContent = 'Ingresa un mensaje.';
                 return;
             }
-            if (!database || !auth.currentUser) {
-                errorDiv.textContent = 'Error de conexión o usuario no autenticado.';
-                return;
-            }
-            loadingDiv.textContent = 'Guardando...';
             try {
                 const imageFile = document.getElementById(`edit-image-${postId}`).files[0];
                 const videoFile = document.getElementById(`edit-video-${postId}`).files[0];
                 if (imageFile && videoFile) {
-                    throw new Error('Por favor, selecciona solo una imagen o un video.');
+                    errorDiv.textContent = 'Selecciona solo una imagen o un video.';
+                    return;
                 }
-                if (imageFile && !['image/jpeg', 'image/png', 'image/gif'].includes(imageFile.type)) {
-                    throw new Error('Archivo inválido. Selecciona una imagen válida (JPEG, PNG, GIF).');
-                }
-                if (videoFile && !['video/mp4', 'video/webm', 'video/ogg'].includes(videoFile.type)) {
-                    throw new Error('Archivo inválido. Selecciona un video válido (MP4, WebM, OGG).');
+                let imageUrl = null, videoUrl = null;
+                if (imageFile) {
+                    imageUrl = await compressMedia(imageFile);
+                } else if (videoFile) {
+                    videoUrl = await compressMedia(videoFile, true);
                 }
                 const postRef = ref(database, 'posts/' + postId);
                 const snapshot = await get(postRef);
-                const post = snapshot.val();
-                if (post && post.clientId === clientId) {
-                    let imageUrl = post.image;
-                    let videoUrl = post.video;
-                    if (imageFile) {
-                        imageUrl = await compressMedia(imageFile);
-                        videoUrl = null;
-                    } else if (videoFile) {
-                        videoUrl = await compressMedia(videoFile, true);
-                        imageUrl = null;
-                    }
+                if (snapshot.val()?.clientId === clientId) {
                     await update(postRef, { content, image: imageUrl, video: videoUrl });
                     document.getElementById(`edit-form-${postId}`).style.display = 'none';
-                    errorDiv.textContent = '';
-                    loadingDiv.textContent = '';
                     showNotification('¡Publicación actualizada!');
                 } else {
                     errorDiv.textContent = 'No tienes permiso para editar esta publicación.';
-                    loadingDiv.textContent = '';
                 }
             } catch (error) {
-                console.error('Error al actualizar publicación:', error);
-                errorDiv.textContent = 'Error al actualizar publicación. Intenta de nuevo.';
-                loadingDiv.textContent = '';
+                errorDiv.textContent = 'Error al actualizar publicación.';
             }
         };
 
         window.toggleLike = async (postId) => {
-            if (!database || !auth.currentUser) {
-                errorDiv.textContent = 'Error de conexión o usuario no autenticado.';
-                return;
-            }
             try {
-                const postRef = ref(database, 'posts/' + postId + '/likes');
+                const postRef = ref(database, `posts/${postId}`);
                 const snapshot = await get(postRef);
-                let likes = snapshot.val() || [];
+                const postData = snapshot.val();
+                let likes = Array.isArray(postData?.likes) ? postData.likes : [];
                 if (likes.includes(clientId)) {
                     likes = likes.filter(id => id !== clientId);
                 } else {
                     likes.push(clientId);
                 }
-                await set(postRef, likes);
+                await update(postRef, { likes });
                 showNotification('¡Like actualizado!');
             } catch (error) {
-                console.error('Error al actualizar like:', error);
-                errorDiv.textContent = 'Error al actualizar like. Intenta de nuevo.';
-            }
-        };
-
-        window.toggleFollow = async (userId) => {
-            if (!database || !auth.currentUser) {
-                errorDiv.textContent = 'Error de conexión o usuario no autenticado.';
-                return;
-            }
-            try {
-                const userRef = ref(database, `users/${auth.currentUser.email.replace(/\./g, '_')}/${userId}`);
-                const currentUserRef = ref(database, `users/${auth.currentUser.email.replace(/\./g, '_')}/${clientId}`);
-                const userSnapshot = await get(userRef);
-                const currentUserSnapshot = await get(currentUserRef);
-                let userData = userSnapshot.val() || { followers: [] };
-                let currentUserData = currentUserSnapshot.val() || { following: [] };
-                let followers = userData.followers || [];
-                let following = currentUserData.following || [];
-                
-                if (followers.includes(clientId)) {
-                    followers = followers.filter(id => id !== clientId);
-                    following = following.filter(id => id !== userId);
-                } else {
-                    followers.push(clientId);
-                    following.push(userId);
-                }
-                
-                await update(userRef, { followers });
-                await update(currentUserRef, { following });
-                showNotification(followers.includes(clientId) ? '¡Ahora sigues a este usuario!' : '¡Has dejado de seguir a este usuario!');
-                
-                const updatedUserSnapshot = await get(ref(database, `users/${auth.currentUser.email.replace(/\./g, '_')}/${clientId}`));
-                const updatedUser = updatedUserSnapshot.val();
-                if (updatedUser) {
-                    followerCount.textContent = `Seguidores: ${updatedUser.followers ? updatedUser.followers.length : 0}`;
-                    postCount.textContent = `Publicaciones: ${updatedUser.postCount || 0}`;
-                }
-            } catch (error) {
-                console.error('Error al actualizar seguimiento:', error);
-                errorDiv.textContent = 'Error al actualizar seguimiento. Intenta de nuevo.';
+                errorDiv.textContent = 'Error al actualizar like.';
             }
         };
 
         window.showReplyForm = (postId) => {
-            const replyForm = document.getElementById(`reply-form-${postId}`);
-            if (replyForm) {
-                replyForm.style.display = 'block';
-            }
-        };
-
-        window.toggleReplies = (postId) => {
-            const repliesDiv = document.getElementById(`reply-form-${postId}`).nextElementSibling;
-            const toggleBtn = repliesDiv.parentElement.querySelector('.toggle-replies-btn');
-            if (repliesDiv.style.display === 'none') {
-                repliesDiv.style.display = 'block';
-                toggleBtn.textContent = 'Ocultar Respuestas';
-            } else {
-                repliesDiv.style.display = 'none';
-                toggleBtn.textContent = 'Mostrar Respuestas';
-            }
+            document.getElementById(`reply-form-${postId}`).style.display = 'block';
         };
 
         window.submitReply = async (postId) => {
-            if (!profile || !auth.currentUser) {
-                errorDiv.textContent = 'Por favor, configura tu perfil y asegúrate de estar autenticado.';
+            const content = document.getElementById(`reply-content-${postId}`).value.trim();
+            if (!content) {
+                errorDiv.textContent = 'Ingresa una respuesta.';
                 return;
             }
-            const replyContent = document.getElementById(`reply-content-${postId}`).value.trim();
-            if (!replyContent) {
-                errorDiv.textContent = 'Por favor, ingresa una respuesta.';
-                return;
-            }
-            if (!database) {
-                errorDiv.textContent = 'Error de conexión.';
-                return;
-            }
-            loadingDiv.textContent = 'Publicando respuesta...';
             try {
                 const imageFile = document.getElementById(`reply-image-${postId}`).files[0];
                 const videoFile = document.getElementById(`reply-video-${postId}`).files[0];
                 if (imageFile && videoFile) {
-                    throw new Error('Por favor, selecciona solo una imagen o un video.');
+                    errorDiv.textContent = 'Selecciona solo una imagen o un video.';
+                    return;
                 }
-                if (imageFile && !['image/jpeg', 'image/png', 'image/gif'].includes(imageFile.type)) {
-                    throw new Error('Archivo inválido. Selecciona una imagen válida (JPEG, PNG, GIF).');
-                }
-                if (videoFile && !['video/mp4', 'video/webm', 'video/ogg'].includes(videoFile.type)) {
-                    throw new Error('Archivo inválido. Selecciona un video válido (MP4, WebM, OGG).');
-                }
-                let imageUrl = null;
-                let videoUrl = null;
+                let imageUrl = null, videoUrl = null;
                 if (imageFile) {
                     imageUrl = await compressMedia(imageFile);
                 } else if (videoFile) {
                     videoUrl = await compressMedia(videoFile, true);
                 }
                 const reply = {
-                    content: replyContent,
+                    content: content,
                     user: profile.displayName,
                     profilePic: profile.profilePic,
                     clientId: clientId,
                     timestamp: Date.now(),
                     image: imageUrl,
                     video: videoUrl,
+                    likes: [],
                     email: auth.currentUser.email
                 };
-                const replyRef = await push(ref(database, `posts/${postId}/replies`), reply);
+                await push(ref(database, `posts/${postId}/replies`), reply);
                 document.getElementById(`reply-form-${postId}`).style.display = 'none';
                 document.getElementById(`reply-content-${postId}`).value = '';
                 document.getElementById(`reply-image-${postId}`).value = '';
                 document.getElementById(`reply-video-${postId}`).value = '';
-                errorDiv.textContent = '';
-                loadingDiv.textContent = '';
                 showNotification('¡Respuesta publicada!');
             } catch (error) {
-                console.error('Error al publicar respuesta:', error);
-                errorDiv.textContent = 'Error al publicar respuesta. Intenta de nuevo.';
-                loadingDiv.textContent = '';
+                errorDiv.textContent = 'Error al publicar respuesta.';
             }
         };
 
-        function debounce(func, wait) {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func(...args);
-                };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-            };
+        window.deleteReply = async (postId, replyId) => {
+            try {
+                const replyRef = ref(database, `posts/${postId}/replies/${replyId}`);
+                const snapshot = await get(replyRef);
+                if (snapshot.val()?.clientId === clientId) {
+                    await remove(replyRef);
+                    showNotification('¡Respuesta eliminada!');
+                } else {
+                    errorDiv.textContent = 'No tienes permiso para eliminar esta respuesta.';
+                }
+            } catch (error) {
+                errorDiv.textContent = 'Error al eliminar respuesta.';
+            }
+        };
+
+        async function viewUserProfile(targetClientId) {
+            if (!profile) return;
+            try {
+                const usersRef = ref(database, 'users');
+                const snapshot = await get(usersRef);
+                const users = snapshot.val() || {};
+                let targetProfile = null;
+                for (const [email, clientIds] of Object.entries(users)) {
+                    for (const [id, userData] of Object.entries(clientIds)) {
+                        if (id === targetClientId && typeof userData === 'object' && userData !== null) {
+                            targetProfile = { ...userData, email: email.replace(/_/g, '.'), clientId: id };
+                            break;
+                        }
+                    }
+                    if (targetProfile) break;
+                }
+                if (targetProfile) {
+                    currentSection = 'user-profile';
+                    forumSection.style.display = 'none';
+                    videoSection.style.display = 'none';
+                    followersSection.style.display = 'none';
+                    userProfileSection.style.display = 'block';
+                    const isFollowing = profile?.following?.includes(targetClientId) || false;
+                    const followButton = targetClientId !== clientId ? (isFollowing ? `<button class="unfollow-btn" onclick="unfollowUser('${targetClientId}')">Dejar de Seguir</button>` : `<button class="follow-btn" onclick="followUser('${targetClientId}')">Seguir</button>`) : '';
+                    const postsRef = ref(database, 'posts');
+                    const postsSnapshot = await get(postsRef);
+                    const userPosts = [];
+                    postsSnapshot.forEach(child => {
+                        const postData = child.val();
+                        if (postData && postData.clientId === targetClientId) {
+                            postData.likes = Array.isArray(postData.likes) ? postData.likes : [];
+                            if (postData.replies) {
+                                Object.values(postData.replies).forEach(reply => {
+                                    reply.likes = Array.isArray(reply.likes) ? reply.likes : [];
+                                });
+                            }
+                            userPosts.push(postData);
+                        }
+                    });
+                    const sortedPosts = userPosts.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+                    userProfileContent.innerHTML = `
+                        <img src="${targetProfile.profilePic || 'https://via.placeholder.com/60'}" alt="Foto de Perfil" style="width: 60px; height: 60px; border-radius: 50%; border: 3px solid var(--primary-color);">
+                        <h3>${targetProfile.displayName || 'Anónimo'}</h3>
+                        <p>Seguidores: ${targetProfile.followers?.length || 0}</p>
+                        <p>Publicaciones: ${targetProfile.postCount || 0}</p>
+                        ${followButton}
+                        <h4>Publicaciones</h4>
+                        <div id="user-posts">${sortedPosts.length > 0 ? '' : '<p>Este usuario no ha publicado nada.</p>'}</div>
+                    `;
+                    renderPosts(sortedPosts, document.getElementById('user-posts'));
+                } else {
+                    userProfileContent.innerHTML = '<p>Perfil no encontrado.</p>';
+                }
+            } catch (error) {
+                userProfileContent.innerHTML = '<p>Error al cargar el perfil.</p>';
+            }
         }
 
-        searchBar.addEventListener('input', debounce(() => {
-            if (!database) {
-                errorDiv.textContent = 'Error de conexión.';
-                return;
-            }
-            get(ref(database, 'posts')).then((snapshot) => {
-                try {
-                    const posts = [];
-                    snapshot.forEach(child => {
-                        const postData = child.val();
-                        if (postData && postData.id && postData.content) {
-                            posts.push(postData);
-                        }
-                    });
-                    renderPosts(filterAndSortPosts(posts));
-                } catch (error) {
-                    console.error('Error al buscar publicaciones:', error);
-                    errorDiv.textContent = 'Error al buscar publicaciones. Intenta de nuevo.';
-                }
-            }).catch((error) => {
-                console.error('Error al obtener publicaciones para búsqueda:', error);
-                errorDiv.textContent = 'Error al cargar publicaciones. Intenta de nuevo.';
-            });
-        }, 500));
+        window.viewUserProfile = viewUserProfile;
 
-        sortOptions.addEventListener('change', () => {
-            if (!database) {
-                errorDiv.textContent = 'Error de conexión.';
-                return;
+        document.getElementById('profile-pic').addEventListener('click', () => {
+            viewUserProfile(clientId);
+        });
+
+        function showNotification(message, realTime = false, targetClientId = null) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `
+                <img src="https://via.placeholder.com/24" alt="Notificación" class="notification-logo">
+                ${message}
+                <button onclick="this.parentElement.remove()">✕</button>
+            `;
+            notificationContainer.appendChild(notification);
+            if (!realTime) {
+                setTimeout(() => notification.remove(), 5000);
+            } else {
+                notification.addEventListener('click', () => {
+                    notification.remove();
+                    if (message.includes('te empezó a seguir') || message.includes('dejó de seguirte')) {
+                        viewUserProfile(targetClientId);
+                    } else if (message.includes('le dio like') || message.includes('comentó')) {
+                        currentSection = 'posts';
+                        forumSection.style.display = 'block';
+                        videoSection.style.display = 'none';
+                        followersSection.style.display = 'none';
+                        userProfileSection.style.display = 'none';
+                        document.getElementById('show-posts').classList.add('active');
+                        document.getElementById('show-videos').classList.remove('active');
+                        document.getElementById('show-followers').classList.remove('active');
+                        initializePostsListener();
+                    }
+                });
             }
-            get(ref(database, 'posts')).then((snapshot) => {
-                try {
-                    const posts = [];
-                    snapshot.forEach(child => {
-                        const postData = child.val();
-                        if (postData && postData.id && postData.content) {
-                            posts.push(postData);
-                        }
+        }
+
+        document.getElementById('search-bar').addEventListener('input', async () => {
+            const searchTerm = document.getElementById('search-bar').value;
+            const { posts, users } = await filterPostsAndUsers(searchTerm);
+            if (currentSection === 'posts') {
+                renderPosts(posts.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0)), postsDiv);
+                if (users.length > 0) {
+                    const userResults = document.createElement('div');
+                    userResults.innerHTML = '<h3>Usuarios</h3>';
+                    users.forEach(user => {
+                        const userElement = document.createElement('div');
+                        userElement.className = 'follower-item';
+                        const isFollowing = profile?.following?.includes(user.clientId) || false;
+                        const followButton = isFollowing ? `<button class="unfollow-btn" data-client-id="${user.clientId}">Dejar de Seguir</button>` : `<button class="follow-btn" data-client-id="${user.clientId}">Seguir</button>`;
+                        userElement.innerHTML = `
+                            <img src="${user.profilePic || 'https://via.placeholder.com/40'}" alt="Foto de ${user.displayName}" onclick="viewUserProfile('${user.clientId}')">
+                            <p>${user.displayName || 'Anónimo'}</p>
+                            ${user.clientId !== clientId ? followButton : ''}
+                        `;
+                        userResults.appendChild(userElement);
                     });
-                    renderPosts(filterAndSortPosts(posts));
-                } catch (error) {
-                    console.error('Error al ordenar publicaciones:', error);
-                    errorDiv.textContent = 'Error al ordenar publicaciones. Intenta de nuevo.';
+                    postsDiv.prepend(userResults);
+                    postsDiv.querySelectorAll('.follow-btn').forEach(btn => {
+                        btn.addEventListener('click', () => followUser(btn.dataset.clientId));
+                    });
+                    postsDiv.querySelectorAll('.unfollow-btn').forEach(btn => {
+                        btn.addEventListener('click', () => unfollowUser(btn.dataset.clientId));
+                    });
                 }
-            }).catch((error) => {
-                console.error('Error al obtener publicaciones para ordenar:', error);
-                errorDiv.textContent = 'Error al cargar publicaciones. Intenta de nuevo.';
-            });
+            } else if (currentSection === 'videos') {
+                renderPosts(posts.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0)), videosDiv);
+            } else {
+                renderFollowers();
+            }
         });
     </script>
 </body>
